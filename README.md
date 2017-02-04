@@ -2,7 +2,7 @@
 Ouvidor é um robô que fica escutando a rádio Educadora FM 24 horas, e tenta transcrever tudo que é dito, o objetivo é demonstrar como é possivel quebrar o esquema de sorteios do programa hora do leite, onde os apresentadores falam qual é o horario do mugido, e no fim do programa eles te ligam, e você deve informar com precisão os horarios.
 
 #Instalação
-git clone https://github.com/mthbernardes/Educadora.git
+git clone https://github.com/mthbernardes/EducadoraOuvidor.git
 
 <h1>PROJETO DESENVOLVIDO EM PYTHON3</h1>
 
