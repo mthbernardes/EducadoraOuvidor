@@ -4,7 +4,7 @@ Ouvidor é um robô que fica escutando a rádio Educadora FM 24 horas, e tenta t
 #Instalação
 git clone https://github.com/mthbernardes/Educadora.git
 
-<h1>PROJETO DESENVOLVIDO EM PYTHON3<h1>
+<h1>PROJETO DESENVOLVIDO EM PYTHON3</h1>
 
 #Mac OS
 <pre>
