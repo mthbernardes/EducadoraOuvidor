@@ -1,0 +1,5 @@
+python-librtmp
+SpeechRecognition
+pydal
+hug
+hug_middleware_cors
