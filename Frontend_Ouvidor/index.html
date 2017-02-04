@@ -1,83 +1,83 @@
+
+
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script>
-  function Buscar(){
-    busca = document.getElementById('Busca').value;
-    $.getJSON( 'http://144.217.93.160:8000/search?q='+busca, function(data){
-      document.getElementById("repostas").innerHTML = "";
-      var div = document.getElementById("repostas");
-  		Dados = data;
-
-      if ($.isEmptyObject(Dados)){
-        div.innerHTML += '<h2>Nada encontrado ;(</h2><br>';
-      }
-      for (i = 0; i < Dados.length; i++) {
-        div.innerHTML += '<h3>Frase: ' + Dados[i].phrase+'</h3>';
-        div.innerHTML += '<br><h4>Data: ' + Dados[i].date+'</h4>';
-        div.innerHTML += '<br><h4>Hora: ' + Dados[i].time+'</h4>';
-        div.innerHTML += '<hr>'
-      }
-  	});
-  }
-</script>
-
-<script>
-window.onload = ultimas;
-function ultimas(){
-	$.getJSON( 'http://144.217.93.160:8000', function(data){
-		Dados = data;
-    console.log(Dados)
-    for (i = 0; i < Dados.length; i++) {
-      var div = document.getElementById("repostas");
-      div.innerHTML += '<h3>Frase: ' + Dados[i].phrase+'</h3>';
-      div.innerHTML += '<br>Data: ' + Dados[i].date;
-      div.innerHTML += '<br>Hora: ' + Dados[i].time;
-      div.innerHTML += '<hr>'
-    }
-	});
-  }
-
-  </script>
-
-<title>Ouvidor - Radio Educadora</title>
-</head>
-
-<body>
-  <!-- Titulo -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>Bem-vindo ao Ouvidor</h1>
-    <p>Ouvidor é um robô que fica escutando a rádio Educadora FM 24 horas, e tenta transcrever tudo que é dito, o objetivo é demonstrar como é possivel quebrar o esquema de sorteios do programa hora do leite, onde os apresentadores falam qual é o horario do mugido, e no fim do programa eles te ligam, e você deve informar com precisão os horarios.</p>
-    <div class="col-lg-6">
-      <div class="input-group">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button" onclick="Buscar()">Buscar!</button>
-        </span>
-        <input type="text" id="Busca" class="form-control" placeholder="Procure por um termo dito na rádio Ex.: Mamata">
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-  </div>
-</div>
-<!-- Fim Titulo -->
-
-<div class="container" id="repostas">
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <p class="text-muted">Desenvolvido por <a href="https://github.com/mthbernardes">Matheus Bernardes a.k.a Gambler</p>
-  </div>
-</footer>
-
-</body>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script>
+         function Buscar(){
+           busca = document.getElementById('Busca').value;
+           $.getJSON( 'http://localhost:8000/search?q='+busca, function(data){
+             document.getElementById("repostas").innerHTML = "";
+             var div = document.getElementById("repostas");
+         		Dados = data;
+         
+             if ($.isEmptyObject(Dados)){
+               div.innerHTML += '<h2>Nada encontrado ;(</h2><br>';
+             }
+             for (i = 0; i < Dados.length; i++) {
+               div.innerHTML += '<h3>Frase: ' + Dados[i].phrase+'</h3>';
+               div.innerHTML += '<br><h4>Data: ' + Dados[i].date+'</h4>';
+               div.innerHTML += '<br><h4>Hora: ' + Dados[i].time+'</h4>';
+               div.innerHTML += '<hr>'
+             }
+         	});
+         }
+      </script>
+      <script>
+         window.onload = ultimas;
+         function ultimas(){
+         	$.getJSON( 'http://localhost:8000', function(data){
+         		Dados = data;
+             console.log(Dados)
+             for (i = 0; i < Dados.length; i++) {
+               var div = document.getElementById("repostas");
+               div.innerHTML += '<h3>Frase: ' + Dados[i].phrase+'</h3>';
+               div.innerHTML += '<br>Data: ' + Dados[i].date;
+               div.innerHTML += '<br>Hora: ' + Dados[i].time;
+               div.innerHTML += '<hr>'
+             }
+         	});
+           }
+         
+           
+      </script>
+      <title>Ouvidor - Radio Educadora</title>
+   </head>
+   <body>
+      <!-- Titulo -->
+      <div class="jumbotron">
+         <div class="container">
+            <h1>Bem-vindo ao Ouvidor</h1>
+            <p>Ouvidor é um robô que fica escutando a rádio Educadora FM 24 horas, e tenta transcrever tudo que é dito, o objetivo é demonstrar como é possivel quebrar o esquema de sorteios do programa hora do leite, onde os apresentadores falam qual é o horario do mugido, e no fim do programa eles te ligam, e você deve informar com precisão os horarios.</p>
+            <div class="col-lg-6">
+               <div class="input-group">
+                  <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" onclick="Buscar()">Buscar!</button>
+                  </span>
+                  <input type="text" id="Busca" class="form-control" placeholder="Procure por um termo dito na rádio Ex.: Mamata">
+               </div>
+               <!-- /input-group -->
+            </div>
+            <!-- /.col-lg-6 -->
+         </div>
+      </div>
+      <!-- Fim Titulo -->
+      <div class="container" id="repostas"></div>
+      <footer class="footer">
+         <div class="container">
+            <p class="text-muted">Projeto: <a href="https://github.com/mthbernardes/EducadoraOuvidor">EducadoraOuvidor</a></p>
+            <p class="text-muted">Desenvolvido por: <a href="https://linkedin.com/in/mthbernardes">Matheus Bernardes</a></p>
+         </div>
+      </footer>
+   </body>
 </html>
+
